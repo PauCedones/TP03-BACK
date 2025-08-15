@@ -1,0 +1,19 @@
+{
+  "name": "tp02-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Coderhouse Backend - TP02",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.2",
+    "mongoose": "^8.17.1",
+    "mongoose-paginate-v2": "^1.9.1",
+    "node-fetch": "^3.3.2",
+    "socket.io": "^4.7.5"
+  }
+}

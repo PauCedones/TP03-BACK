@@ -1,0 +1,11 @@
+[
+  {
+    "id": "d96bc88b-fc83-478c-93d6-591d9cecc8fe",
+    "title": "Hola",
+    "description": "palabra hola en dorado",
+    "code": "123",
+    "price": 5000,
+    "stock": 10,
+    "category": "Palabras"
+  }
+]

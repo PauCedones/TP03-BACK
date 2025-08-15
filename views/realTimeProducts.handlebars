@@ -1,0 +1,26 @@
+<h1>Productos en tiempo real</h1>
+
+<h2>Agregar producto</h2>
+<form id="productForm">
+  <input type="text" name="title" placeholder="Título" required />
+  <input type="text" name="description" placeholder="Descripción" />
+  <input type="text" name="code" placeholder="Código" required />
+  <input type="number" name="price" placeholder="Precio" step="0.01" required />
+  <input type="number" name="stock" placeholder="Stock" />
+  <input type="text" name="category" placeholder="Categoría" />
+  <button type="submit">Agregar</button>
+</form>
+
+<hr />
+
+<h2>Lista de productos</h2>
+<ul id="productList">
+  {{#each products}}
+    <li data-id="{{id}}">
+      <strong>{{title}}</strong>
+      - ${{price}}
+      <small>(código: {{code}})</small>
+      <button class="btn-delete" data-id="{{id}}">Eliminar</button>
+    </li>
+  {{/each}}
+</ul>

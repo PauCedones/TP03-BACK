@@ -1,0 +1,34 @@
+<h1>Productos</h1>
+
+<form method="GET" action="/products" class="filters">
+  <input type="text" name="query" placeholder="category:electronics o status:true" value="{{query}}">
+  <select name="sort">
+    <option value="">Sin orden</option>
+    <option value="asc">Precio asc</option>
+    <option value="desc">Precio desc</option>
+  </select>
+  <input type="number" name="limit" min="1" placeholder="limit">
+  <button type="submit">Aplicar</button>
+</form>
+
+<ul class="product-list">
+  {{#each data.payload}}
+    <li class="product-card">
+      <h3>{{this.title}}</h3>
+      <p>{{this.description}}</p>
+      <p><strong>${{this.price}}</strong></p>
+      <p>Categoría: {{this.category}}</p>
+      <form method="POST" action="/api/carts/{{../cartId}}/products/{{this._id}}">
+        <input type="number" name="quantity" value="1" min="1">
+        <button type="submit">Agregar al carrito</button>
+      </form>
+      <a href="/products/{{this._id}}">Ver detalle</a>
+    </li>
+  {{/each}}
+</ul>
+
+<nav class="pagination">
+  {{#if data.hasPrevPage}}<a href="{{data.prevLink}}">« Anterior</a>{{/if}}
+  <span>Página {{data.page}} de {{data.totalPages}}</span>
+  {{#if data.hasNextPage}}<a href="{{data.nextLink}}">Siguiente »</a>{{/if}}
+</nav>
